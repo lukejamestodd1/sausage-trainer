@@ -8,14 +8,14 @@
 
 # sausage trainer seeding
 
-User.delete_all
-Activity.delete_all
-ActivityType.delete_all
-Venue.delete_all
-Participant.delete_all
-Group.delete_all
-GroupEntry.delete_all
 Contact.delete_all
+GroupEntry.delete_all
+Group.delete_all
+Participant.delete_all
+Activity.delete_all
+Venue.delete_all
+ActivityType.delete_all
+User.delete_all
 
 User.create(username: 'cake', email: 'cake@pudding.com' , password: 'pudding', instructor: true, student: false, bio: "this is me",  photo_url: "", local_timezone: "Melbourne")
 User.create(username: 'donuts', email: 'donuts@pudding.com' , password: 'pudding', instructor: false, student: true, bio: "this is me",  photo_url: "", local_timezone: "Sydney")
@@ -34,7 +34,7 @@ bools = [ true, false ]
 costs = [ 20.0, 25.0, 28.0, 36.0, 106.34 ]
 
 10.times do |count|
-  Activity.create(title: "activity_#{count}", start_time:"", duration: durations.sample, description: "", proposed: bools.sample, confirmed: bools.sample, requires_payment: bools.sample, cost: costs.sample, venue_id: Venue.pluck(:id).sample, activity_type_id: ActivityType.pluck(:id).sample, user_id: User.pluck(:id).sample)
+  Activity.create(title: "activity_#{count}", start_time:"", duration: durations.sample, max_size: 10, description: "", proposed: bools.sample, confirmed: bools.sample, requires_payment: bools.sample, cost: costs.sample, venue_id: Venue.pluck(:id).sample, activity_type_id: ActivityType.pluck(:id).sample, user_id: User.pluck(:id).sample)
 end
 
 30.times do |count|
