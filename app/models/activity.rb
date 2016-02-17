@@ -5,13 +5,7 @@ class Activity < ActiveRecord::Base
   has_many :participants
 
   def venue_details
-    data = {
-      name: venue.name,
-      address: venue.address,
-      description: venue.description,
-      geo_lat: venue.geo_lat,
-      geo_lng: venue.geo_lng
-    }
+    venue
   end
 
   def activity_type_name
