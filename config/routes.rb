@@ -28,7 +28,9 @@ Rails.application.routes.draw do
   namespace :api do
 
     resources :users
+    get '/users/:id/activities' => 'users#activities'
     resources :activities
+    get '/activities/:id/participants' => 'activities#participants'
     resources :venues
     resources :activity_types
     resources :participants
