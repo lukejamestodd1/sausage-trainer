@@ -29,6 +29,9 @@ Rails.application.routes.draw do
 
     resources :users
     resources :activities
+    resources :venues
+    resources :activity_types
+    resources :participants
 
   end
   # Example resource route with sub-resources:
