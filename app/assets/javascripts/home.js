@@ -13,3 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require models
+//= require views
+//= require router
+//= require app

@@ -1,0 +1,210 @@
+/* All pages */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.center-align {
+  text-align: center;
+}
+
+.checkbox {
+  display: inline-block;
+}
+
+.colorgraph {
+  height: 5px;
+  border-top: 0;
+  background: #c4e17f;
+  border-radius: 5px;
+  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #F9690E;
+} 
+
+/*.navbar-default {
+  background-color: #81CFE0;
+}
+
+.navbar-header {
+  background-color: #81CFE0;
+}*/
+
+.navbar-default .navbar-toggle {
+  border-color: #F9690E;
+}
+
+.icon-bar {
+  background-color: #F9690E !important;
+}
+
+.navbar a {
+  color: #81CFE0 !important;
+}
+
+.fill1 {
+  background-image: url('http://www.bsfgym.com/wp-content/uploads/2014/10/Personal-Training2.jpg');
+}
+
+.fill2 {
+  background-image: url('http://thepilatesbody.org/wp-content/uploads/2014/11/spin-class.jpg');
+}
+
+.fill3 {
+  background-image: url('https://i.ytimg.com/vi/9qs_5Q9g8kE/maxresdefault.jpg');
+}
+
+#footer {
+  height: 60px;
+/*  background-color: #81CFE0;*/
+  margin-top:2em;
+  padding: 9px 0px 9px 0px;
+  vertical-align: center;
+}
+
+#footer p, a {
+  color: #81CFE0;
+}
+
+.text-muted {
+  margin-bottom: 0px;
+}
+
+/* Multiple Pages */
+.form-btn {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.title-colourgraph h3 {
+  margin-top: 0px;
+}
+
+.header-title {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.tabs-title {
+  vertical-align: bottom;
+}
+
+.center-align {
+  text-align: center;
+}
+
+.nav-tabs {
+  margin-top: 20px;
+} 
+
+/* profile */
+.profile-bio-box {
+  height: 150px;
+  border: 5px solid black;
+}
+
+.profile-button {
+  height: 50px;
+  text-align: center;
+  vertical-align: center;
+}
+
+/* Index/home page */
+.img-portfolio {
+    margin-bottom: 30px;
+}
+
+.img-hover:hover {
+    opacity: 0.8;
+}
+
+header.carousel {
+  height: 50%;
+}
+
+header.carousel .item,
+header.carousel .item.active,
+header.carousel .carousel-inner {
+  height: 100%;
+}
+
+header.carousel .fill {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.gh-symbol {
+  float: right;
+}
+
+/* login page */
+.login-form-box {
+  margin-top: 50px;
+  text-align: center;
+}
+
+/* sign up page */
+.sign-up-form-box h2, button, h4 {
+  text-align: center;
+}
+
+.sign-up-form-box .checkbox {
+  text-align: center;
+}
+
+#footer p {
+/*  padding-top: 11px;*/
+  vertical-align: center;
+}
+
+.gh-symbol {
+  float: right;
+}
+
+.row-index {
+  margin-top: 20px;
+}
+
+/* dash page */
+.avatar {
+  width: 4em;
+  border-radius: 2em;
+  height: 4em; 
+  vertical-align: middle;
+}
+
+.calendar-box {
+  border: 5px solid black;
+  height: 200px;
+}
+
+/* all calendars */
+.fc-day-grid-container {
+  overflow: visible;
+  height: 100% !important;
+}
+
+.fc th, .fc td {
+  border: none;
+}
+
+
+/* use  */
+/*div.fc-week > div > table > tbody> tr > td:nth-child(1){
+  background-color: red;
+}*/
+
+
+
+
