@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   #       get 'sold'
   #     end
   #   end
+  get "/" => "pages#splash"
+
   namespace :api do
 
     resources :users
