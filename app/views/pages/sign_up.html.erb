@@ -36,22 +36,23 @@
   <div class="sign-up-form-box">
     <div class="row">
       <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-sm-offset-2 col-md-offset-3">
-        <form>
+        <form action="/sign-up" method="post">
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
           <h2>Sign Up</h2>
           <h4>Already have an account? Login <a href="">here</a></h4>
           <hr class="colorgraph">
           <div class="row">
             <div class="form-group">
               <label for="">Username</label>
-              <input placeholder="Required" class="form-control input-lg">
+              <input placeholder="Required" name="username" class="form-control input-lg">
             </div>
             <div class="form-group">
               <label for="">Email</label>
-              <input placeholder="Required" class="form-control input-lg">
+              <input placeholder="Required" name="email" class="form-control input-lg">
             </div>
             <div class="form-group">
               <label for="">Password</label>
-              <input placeholder="Required" class="form-control input-lg">
+              <input placeholder="Required" name="password" class="form-control input-lg">
             </div>
             <div class="form-group">
               <label for="">Password Confirmation</label>
@@ -59,12 +60,12 @@
             </div>
             <div class="form-group">
               <label>Add a photo</label>
-              <input type="file">
+              <input type="file" name="image_url">
             </div>
             <div class="btn-group-verical" role="group">
               <label for="">Select those that apply to you: </label>
-              <input type="checkbox">  I am an instructor
-              <input type="checkbox">  I am a student
+              <input type="checkbox" name="instructor">  I am an instructor
+              <input type="checkbox" name="student">  I am a student
             </div>
           </div>
 

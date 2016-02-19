@@ -35,22 +35,23 @@
   <div class="login-form-box">
     <div class="row">
       <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-        <form>
+        <form action="/login" method="post">
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
           <h2>Login</h2>
           <h4>Don't have an account? Sign up <a href="">here</a></h4>
           <hr class="colorgraph">
           <div class="row">
             <div class="form-group">
-              <input placeholder="Username" class="form-control input-lg">
+              <input placeholder="Email" name="email" class="form-control input-lg">
             </div>
             <div class="form-group">
-              <input placeholder="Password" class="form-control input-lg">
+              <input placeholder="Password" name="password" class="form-control input-lg" type="password">
             </div>
           </div>
           <hr class="colorgraph">
           <div class="row">
             <div class="col-xs-12 col-md-6 col-md-offset-3">
-              <button><i class="fa fa-unlock-alt"></i> Sign In</button>
+              <button><i class="fa fa-unlock-alt"></i> Login</button>
             </div>
           </div>
         </form>

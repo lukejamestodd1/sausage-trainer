@@ -1,6 +1,6 @@
 
 //wrap it all in app object when finished
-var sausageTrainerApp = {};
+var app = {};
 
 // helper function
 var setupBody = function() {
@@ -20,7 +20,24 @@ var setupBody = function() {
     }
   });
 };
-
+//sets up the menu/header for each page
+var setupMenu = function(){
+	var mainContainer = new MainContainer();
+	$('body').append(mainContainer.render().el);
+	var header = new MenuHeaderView();
+	$('.main').append(header.render().el);
+	var colourBar = new ColourBar();
+	$('.main').append(colourBar.render().el);
+};
+//sets up the menu/header for each page
+var studentMenu = function(){
+	var mainContainer = new MainContainer();
+	$('body').append(mainContainer.render().el);
+	var header = new StudentHeaderView();
+	$('.main').append(header.render().el);
+	var colourBar = new ColourBar();
+	$('.main').append(colourBar.render().el);
+};
 
 //========== ROUTER ========= //
 
@@ -28,9 +45,7 @@ var setupBody = function() {
 var Router = Backbone.Router.extend({
 
 	routes: {
-		"": "showIndex",
-		"login": "login",
-		"signup": "signUp",
+		"": "showDash",
 
 		"trainer/dash": "trainerDash",
 		"trainer/activities": "trainerActivitiesList",
@@ -41,7 +56,7 @@ var Router = Backbone.Router.extend({
 		// "trainer/activities/new": "trainerActivityCreate",
 		// "trainer/activities/edit": "trainerActivityEdit",
 		// "trainer/contacts/message": "trainerSendMessage",
-		
+
 		"student/dash": "studentDash",
 		"student/activities": "studentActivitiesList",
 		"student/calendar": "studentCalendar",
@@ -50,42 +65,36 @@ var Router = Backbone.Router.extend({
 		"student/activities/:id": "studentActivityDetails",
 		// "student/activities/:id/book": "studentActivityBook",
 		//	"student/contacts/:id": "studentTrainerDetail",
-		
+
 	},
 
-	showIndex: function(){
+	showDash: function(){
     console.log('Index route loading...');
-    // index page made up of:
-    // nav bar
+    // dash page made up of:
     // welcome/splash screen view
     // footer
     setupBody();
 
-    var splashCarousel = new CarouselView();
-    $('body').append(splashCarousel.render().el);
-    $('.carousel').carousel({ interval: 5000 });
+    app.currentUser = new CurrentUser();
+    app.currentUser.fetch().done( function() {
+      setupMenu();
+      $('.header-title').html('Dashboard - trainer');
+      $('#dashTab').addClass("active");
+      var trainerDash = new TrainerDashContainerView();
+      $('.main').append(trainerDash.render().el);
+      console.log(app.currentUser.attributes.username);
+    });
 
-    var splashMain = new SplashMainView();
-    $('body').append(splashMain.render().el);
 
-    var footer = new FooterView();
-    $('body').append(footer.render().el);
-	},
-
-	login: function(){
-		console.log("Login route loading...");
-
-    setupBody();
-
-    var loginForm = new LoginFormView();
-    $('body').append(loginForm.render().el);
-
-    var footer = new FooterView();
-    $('body').append(footer.render().el);
-	},
-
-	signUp: function(){
-
+		//activities list
+		// var activities = new Activities();
+		// activities.fetch().done(function() {
+		// 	activities.each(function(instance) {
+		// 		var activityItem = new StudentActivityItemView({ model: instance});
+		// 		$('.userColumn').css('display', 'none');
+		// 		$('.activities-list').append(activityItem.render().el);
+		// 	});
+		// });
 	},
 
 	trainerDash: function(){
@@ -155,8 +164,8 @@ var Router = Backbone.Router.extend({
 			var trainerActivityDetails = new ActivityDetailView({model: activityItem});
 			$('body').append(trainerActivityDetails.render().el);
 		});
-		
-		
+
+
 	},
 
 	trainerActivityCreate: function(){
@@ -167,12 +176,12 @@ var Router = Backbone.Router.extend({
 
 	},
 
-	
+
 	trainerSendMessage: function(){
 
 	},
 
-	
+
 	studentDash: function(){
 		setupBody();
 		var studentDash = new StudentDashContainerView();

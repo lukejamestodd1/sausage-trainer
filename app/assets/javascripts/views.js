@@ -44,14 +44,51 @@ var FooterView = Backbone.View.extend({
   }
 });
 
-var LoginFormView = Backbone.View.extend({
+//for main container - holds dash(header text, navigation),
+//colour bar, and containers/lists below
+var MainContainer = Backbone.View.extend({
   tagName: 'div',
-  className: 'container',
-  template: $('#loginFormTemplate').html(),
-  render: function() {
-    var html = Mustache.render(this.template, this.model);
-		this.$el.html(html);
-		return this;
+  className: 'container main',
+  template: $('#container-template').html(),
+  render: function(){
+    var html = Mustache.render(this.template);
+    this.$el.html(html);
+    return this;
+  }
+});
+
+//colour bar divider object
+var ColourBar = Backbone.View.extend({
+  tagName: 'div',
+  template: $('#colour-bar-template').html(),
+  render: function(){
+    var html = Mustache.render(this.template);
+    this.$el.html(html);
+    return this;
+  }
+});
+
+//for trainer header title and controls
+var MenuHeaderView = Backbone.View.extend({
+  tagName: 'div',
+  className: 'dash-title',
+  template: $('#trainer-header-template').html(),
+  render: function(){
+    var html = Mustache.render(this.template);
+    this.$el.html(html);
+    return this;
+  }
+});
+
+//for student header title and controls
+var StudentHeaderView = Backbone.View.extend({
+  tagName: 'div',
+  className: 'dash-title',
+  template: $('#student-header-template').html(),
+  render: function(){
+    var html = Mustache.render(this.template);
+    this.$el.html(html);
+    return this;
   }
 });
 

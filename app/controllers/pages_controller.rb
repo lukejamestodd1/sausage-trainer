@@ -4,8 +4,9 @@ class PagesController < ApplicationController
     if logged_in?
       @user = current_user
       redirect_to '/home'
+    else
+      render :splash
     end
-    render :splash
   end
 
   def login

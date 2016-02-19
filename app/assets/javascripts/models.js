@@ -3,8 +3,12 @@
 
 
 var User = Backbone.Model.extend({
-		urlRoot: 'http://localhost:3000/api/users'
-	});
+	urlRoot: 'http://localhost:3000/api/users'
+});
+
+var CurrentUser = Backbone.Model.extend({
+  urlRoot: 'http://localhost:3000/api/session'
+});
 
 var Activity = Backbone.Model.extend({
 	urlRoot: 'http://localhost:3000/api/activities'
@@ -37,7 +41,7 @@ var GroupEntry = Backbone.Model.extend({
 
 
 
-//========= COLLECTIONS ===========// 
+//========= COLLECTIONS ===========//
 
 
 var Users = Backbone.Collection.extend({
@@ -79,5 +83,3 @@ var GroupEntries = Backbone.Collection.extend({
 	model: GroupEntry,
 	url: 'http://localhost:3000/api/group_entries'
 });
-
-
